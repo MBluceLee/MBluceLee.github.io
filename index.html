@@ -14,22 +14,27 @@
         list-style: none;
         outline: none;
         text-decoration: none;
+        user-select: none;
     }
     </style>
     <style type="text/css">
     body {
         width: 100vw;
         height: 100vh;
-        background: url(bg.jpg) no-repeat center;
+        background: url(bg.jpg) no-repeat center fixed;
         background-size: 100%;
     }
 
     .container {
-        padding: 5px;
+        padding: 10px;
         background-color: rgba(255, 255, 255, 0.9);
-
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         /*      width: 100vw;
             height: 100vh;*/
+    }
+
+    .box {
+        margin-bottom: 5px;
     }
 
     h3 {
@@ -39,6 +44,11 @@
 
     ul {
         overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    .container ul:not(:nth-of-type(1)):not(:nth-of-type(2)):not(:nth-of-type(3)) {
+        display: none;
     }
 
     li {
@@ -47,9 +57,34 @@
         border: 0.5px solid gainsboro;
         padding: 3px;
         text-align: center;
-        margin-top: 10px;
+        margin-top: 11px;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 10px;
+    }
+
+    li:active {
+        border-color: red;
     }
     </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        const listEle = document.querySelectorAll('.box ul');
+        for (list of listEle) {
+            console.log();
+            const lastLi = list.children[list.children.length - 1]
+            lastLi && (lastLi.innerText == "...") &&
+            (lastLi.style.color = 'red') &&
+                (
+
+                    lastLi.addEventListener('click', function() {
+                        const siblingEle = this.parentNode.nextElementSibling;
+                        siblingEle &&
+                        (siblingEle.style.display = "block")
+                    })
+                )
+        }
+    }
+    </script>
 </head>
 
 <body>
@@ -60,21 +95,119 @@
                 <li>数组+对象</li>
                 <li>函数</li>
                 <li>循环+判断</li>
+                <li>发布订阅</li>
             </ul>
         </div>
         <div class="box">
             <h3>小B</h3>
             <ul>
-                <li>疫情追踪案例</li>
-                <li>mock-1/3</li>
-                <li>Git分支</li>
-                <li>nginx安装</li>
-                <li>Linux安装</li>
-                <li>HTTP</li>
-                <li>Express</li>
-                <li>NavigationBar</li>
-                <li>下载</li>
-                <li>Css</li>
+                <li>Sass/3</li>
+                <li>Less/3</li>
+                <li>BootStrap/3</li>
+                <li>Tailwind/3</li>
+                <li>EasyUI/3</li>
+                <li>Float</li>
+                <li>Flex+Grid</li>
+                <li>3大布局</li>
+                <li>图文/3</li>
+                <li>表单/3</li>
+                <li>表格/3</li>
+                <li>滚动+轮播</li>
+                <li>特效/∞</li>
+                <li>样式/∞</li>
+                <li>动画/3</li>
+            </ul>
+            <ul>
+                <li>TS/3</li>
+                <li>小程序/3</li>
+                <li>JQuery/3</li>
+                <li>Electron/3</li>
+                <li>微前端/3</li>
+                <li>ECharts/3</li>
+                <li>LayUI/3</li>
+                <li>Lodash/3</li>
+            </ul>
+            <ul>
+                <li>ES6/∞</li>
+                <li>Promise/3</li>
+                <li>Socket/∞</li>
+                <li>Ajax/3</li>
+                <li>Axios/3</li>
+                <li>Fetch/3</li>
+                <li>IndexDB/3</li>
+                <li>Cookie/3</li>
+                <li>Storage/3</li>
+                <li>加密/3</li>
+                <li>Dom/3</li>
+                <li>Bom/3</li>
+                <li>对象/∞</li>
+                <li>函数/∞</li>
+                <li>作用域</li>
+                <li>原型链</li>
+                <li>闭包</li>
+                <li>正则/∞</li>
+                <li>...</li>
+            </ul>
+            <ul>
+                <li>云函数/3</li>
+                <li>Node/3</li>
+                <li>Express/3</li>
+                <li>Mock/3</li>
+                <li>Mongo/3</li>
+                <li>云网</li>
+                <li>OSI/3</li>
+                <li>Http/3</li>
+                <li>Https/3</li>
+                <li>Url/3</li>
+                <li>...</li>
+            </ul>
+            <ul>
+                <li>SEO/∞</li>
+                <li>CDN/∞</li>
+                <li>攻击/∞</li>
+                <li>优化/∞</li>
+                <li>原生/3</li>
+                <li>第三方登录</li>
+                <li>Web支付</li>
+                <li>文档编辑</li>
+                <li>上传下载</li>
+                <li>在线客服</li>
+                <li>二维码</li>
+            </ul>
+        </div>
+        <div class="box">
+            <h3>2B</h3>
+            <ul>
+                <li>Vue/3</li>
+                <li>React/3</li>
+                <li>UniApp/3</li>
+                <li>Mui/3</li>
+                <li>Element/3</li>
+                <li>Vant/3</li>
+                <li>AntD/3</li>
+                <li>IView/3</li>
+            </ul>
+            <ul>
+                <li>Nuxt/3</li>
+                <li>Next/3</li>
+                <li>云Cloud/3</li>
+                <li>Koa/3</li>
+                <li>Redis/∞</li>
+                <li>MySql/∞</li>
+            </ul>
+            <ul>
+                <li>TCP/IP</li>
+                <li>内存管理</li>
+                <li>APIFox</li>
+                <li>Whistle</li>
+                <li>...</li>
+            </ul>
+            <ul>
+                <li>音视频</li>
+                <li>直播</li>
+                <li>地图</li>
+                <li>环信+融云</li>
+                <li>秒改</li>
             </ul>
         </div>
     </div>
